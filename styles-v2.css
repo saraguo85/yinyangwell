@@ -1,0 +1,645 @@
+/* ===========================================================
+   YinYang Well — v2 design system
+   Direction: Minimal Clinical White
+   Register: private clinic / concierge medicine (£15k–50k)
+   Rules: hairlines not shadows · square not rounded ·
+          whitespace is the luxury · nothing moves on hover
+   =========================================================== */
+
+:root{
+  /* Surface */
+  --paper:#FFFFFF;
+  --paper-2:#FAFAF8;        /* alternating section ground */
+  --paper-3:#F4F3EF;        /* rare, for inset panels */
+
+  /* Ink */
+  --ink:#1A1A1A;            /* headings, primary text */
+  --ink-2:#5A5A56;          /* body, secondary */
+  --ink-3:#8C8C86;          /* captions, meta */
+
+  /* Accent — used sparingly. Restraint is the signal. */
+  --accent:#8C2E22;         /* 硃砂 cinnabar — the seal mark. Used at ~1% coverage. */
+  --accent-2:#6E2119;
+
+  /* Structure */
+  --line:#E6E5E0;           /* hairline */
+  --line-2:#D2D1CA;         /* emphasised hairline */
+
+  /* Type */
+  --serif:'Newsreader',"Noto Serif TC","Songti SC",Georgia,serif;
+  --han:"Noto Serif TC","Songti SC","Songti TC",serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+
+  /* Rhythm */
+  --gut:clamp(20px,5vw,40px);
+  --sec:clamp(80px,11vw,150px);   /* section vertical padding */
+  --r:2px;                         /* the only radius on the site */
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  font-size:15px;
+  font-weight:400;
+  line-height:1.75;
+  letter-spacing:-.011em;
+  color:var(--ink-2);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+em{font-style:italic}
+
+/* ---------- Type scale ---------- */
+h1,h2,h3,h4,.serif{
+  font-family:var(--serif);
+  font-weight:300;
+  color:var(--ink);
+  line-height:1.06;
+  letter-spacing:-.02em;
+}
+h1{font-size:clamp(38px,5.9vw,70px);letter-spacing:-.028em}
+h2{font-size:clamp(30px,4.2vw,50px);line-height:1.1}
+h3{font-size:clamp(19px,2vw,23px);line-height:1.22;letter-spacing:-.012em}
+h4{font-size:17px;line-height:1.3}
+
+/* The micro-label. Tiny, tracked wide open. Does a lot of work. */
+.eyebrow{
+  display:block;
+  font-family:var(--sans);
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-bottom:26px;
+}
+
+/* ---------- Layout ---------- */
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+.narrow{max-width:660px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+section.block{padding:var(--sec) 0}
+section.block.alt{background:var(--paper-2)}
+.rule{height:1px;background:var(--line);border:0}
+
+/* ---------- Buttons — square, quiet, mostly outline ---------- */
+.btn{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--paper);
+  background:var(--ink);
+  border:1px solid var(--ink);
+  border-radius:var(--r);
+  padding:17px 34px;
+  cursor:pointer;
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-lg{padding:20px 44px;font-size:11.5px}
+
+/* A text link that reads as editorial, not as a UI control */
+.link{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink);
+  border-bottom:1px solid var(--line-2);
+  padding-bottom:4px;
+  transition:border-color .25s ease,color .25s ease;
+}
+.link:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- Nav ---------- */
+nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:78px;gap:30px}
+.logo{
+  font-family:var(--serif);
+  font-size:23px;
+  letter-spacing:-.015em;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.logo span{color:var(--ink-3)}
+.nav-links{display:flex;gap:34px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+@media(max-width:980px){.nav-links{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(70px,10vw,132px) 0 clamp(60px,8vw,104px)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(40px,6vw,90px);align-items:center}
+.hero h1{margin:0 0 30px}
+.hero p.lead{
+  font-size:17px;line-height:1.72;color:var(--ink-2);
+  max-width:32em;margin-bottom:44px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-trust{
+  display:flex;align-items:center;gap:10px;
+  margin-top:42px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--ink-3);
+}
+.hero-trust b{color:var(--ink);font-weight:500}
+
+/* Imagery. Square corners, no shadow — a photograph, not a card. */
+.hero-art{
+  aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;position:relative;
+  background:var(--paper-3);border:1px solid var(--line);
+}
+.hero-art .tag{
+  position:absolute;left:0;bottom:0;right:0;
+  background:rgba(255,255,255,.94);
+  border-top:1px solid var(--line);
+  padding:16px 20px;font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-2);
+}
+.hero-art .tag b{color:var(--ink);font-weight:500}
+.ph{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:var(--ink-3);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  text-align:center;padding:24px;
+}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:44px}}
+
+/* ---------- Trust strip — hairline separated, serif figures ---------- */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust .item{padding:42px 30px;border-left:1px solid var(--line)}
+.trust .item:first-child{border-left:0;padding-left:0}
+.trust .num{font-family:var(--serif);font-size:38px;color:var(--ink);line-height:1;margin-bottom:12px}
+.trust .lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);line-height:1.5}
+@media(max-width:860px){
+  .trust-in{grid-template-columns:repeat(2,1fr)}
+  .trust .item{padding:30px 22px;border-top:1px solid var(--line)}
+  .trust .item:nth-child(odd){border-left:0;padding-left:0}
+  .trust .item:nth-child(-n+2){border-top:0}
+}
+
+/* ---------- Section headings ---------- */
+.sec-head{max-width:38em;margin-bottom:clamp(48px,6vw,80px)}
+.sec-head.center{text-align:center;margin-left:auto;margin-right:auto}
+.sec-head h2{margin-bottom:22px}
+.sec-head p{font-size:16.5px;color:var(--ink-2);max-width:34em}
+.sec-head.center p{margin-left:auto;margin-right:auto}
+
+/* ---------- Editorial columns (replaces rounded cards) ---------- */
+.appr-grid,.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.appr-card,.who-card{
+  padding:44px 34px 48px;
+  border-left:1px solid var(--line);
+  border-radius:0;background:transparent;
+}
+.appr-grid>*:first-child,.who-grid>*:first-child{border-left:0;padding-left:0}
+.appr-card .ic{
+  width:auto;height:auto;background:none;border-radius:0;
+  font-family:var(--serif);font-size:22px;color:var(--ink-3);
+  margin-bottom:28px;
+}
+.appr-card h3,.who-card h3{margin-bottom:14px}
+.appr-card p,.who-card p{font-size:14.5px;color:var(--ink-2)}
+.who-card{transition:none}
+.who-card:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.who-card .tagn{
+  display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;margin-bottom:18px;
+}
+.who-card a{color:var(--ink);border-bottom:1px solid var(--line-2);padding-bottom:3px;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
+@media(max-width:860px){
+  .appr-grid,.who-grid{grid-template-columns:1fr}
+  .appr-card,.who-card{border-left:0;border-top:1px solid var(--line);padding:36px 0 40px}
+  .appr-grid>*:first-child,.who-grid>*:first-child{border-top:0}
+}
+
+/* ---------- Practitioners — portraits, not avatars ---------- */
+.docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
+.doc{background:transparent;border:0;border-radius:0;padding:0;text-align:left}
+.doc .av{
+  width:100%;height:auto;aspect-ratio:4/5;border-radius:var(--r);
+  margin:0 0 22px;background-color:var(--paper-3);
+  border:1px solid var(--line);filter:saturate(.9);
+}
+.doc h3{margin-bottom:8px}
+.doc .role{
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;margin-bottom:16px;
+}
+.doc p{font-size:14px;color:var(--ink-2)}
+@media(max-width:860px){.docs-grid{grid-template-columns:1fr;gap:44px}}
+
+/* ---------- The programme (flagship, £15k–50k) ---------- */
+.prog{border-top:1px solid var(--ink);padding-top:clamp(40px,5vw,64px)}
+.prog-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(40px,6vw,88px);align-items:start}
+/* price + CTA follow the reader down the itinerary instead of leaving a void */
+@media(min-width:861px){.prog-grid>div:first-child{position:sticky;top:118px}}
+.prog h2{margin-bottom:26px}
+.prog .from{
+  font-family:var(--serif);font-size:clamp(48px,5.4vw,68px);color:var(--ink);
+  line-height:1;margin:0 0 8px;letter-spacing:-.02em;
+}
+.prog .from small{
+  font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:14px;
+}
+.prog .note{font-size:12.5px;color:var(--ink-3);margin-top:14px}
+.prog-list{border-top:1px solid var(--line);margin-top:6px}
+.prog-list li{
+  list-style:none;display:grid;grid-template-columns:26px 1fr;gap:22px;
+  padding:22px 0;border-bottom:1px solid var(--line);
+}
+.prog-list .n{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;
+  color:var(--ink-3);padding-top:5px;width:26px;flex:none}
+.prog-list b{display:block;color:var(--ink);font-weight:500;font-size:15px;margin-bottom:4px}
+.prog-list p{font-size:14px;color:var(--ink-2);margin:0}
+@media(max-width:860px){.prog-grid{grid-template-columns:1fr;gap:44px}}
+
+/* ---------- Entry-level services — a quiet list, never a shop grid ---------- */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:0;border-top:1px solid var(--line)}
+.svc{
+  position:relative;display:grid;grid-template-columns:1fr auto;
+  align-items:baseline;gap:30px;
+  background:transparent;border:0;border-bottom:1px solid var(--line);
+  border-radius:0;padding:32px 0;transition:none;
+}
+.svc:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.svc .pill{
+  align-self:start;background:none;border-radius:0;padding:0;margin:0 0 10px;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:500;color:var(--ink-3);
+}
+.svc h3{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:10px}
+.svc p{color:var(--ink-2);font-size:14.5px;margin-bottom:16px;max-width:44em;flex:none}
+.svc .price{
+  font-family:var(--serif);font-size:26px;color:var(--ink);
+  line-height:1;margin:0;white-space:nowrap;text-align:right;
+}
+.svc .price small{font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.04em}
+.svc .more{
+  margin:0;align-self:start;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);border-bottom:1px solid var(--line-2);padding-bottom:3px;
+}
+.svc:hover .more{color:var(--accent);border-color:var(--accent);letter-spacing:.1em}
+/* neutralise the old "featured card" treatment */
+.svc.feature,.svc-grid .svc:first-child .pill,.svc.feature .pill{
+  background:none;border:0;border-bottom:1px solid var(--line);
+  box-shadow:none;color:var(--ink-3);
+}
+.svc.feature{border-width:0 0 1px 0}
+@media(max-width:720px){.svc{grid-template-columns:1fr;gap:12px}.svc .price{text-align:left}}
+
+/* ---------- Testimonials — set as pull quotes ---------- */
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.tst{
+  background:transparent;border:0;border-left:1px solid var(--line);
+  border-radius:0;padding:44px 34px;
+}
+.tst-grid>*:first-child{border-left:0;padding-left:0}
+.tst .stars{display:none}
+.tst p{
+  font-family:var(--serif);font-size:20px;line-height:1.34;
+  color:var(--ink);letter-spacing:-.012em;margin-bottom:26px;
+}
+.tst .who{display:flex;align-items:center;gap:12px}
+.tst .who .pic{width:36px;height:36px;border-radius:50%;background:var(--paper-3);border:1px solid var(--line);flex:none}
+.tst .who b{font-size:12px;font-weight:500;color:var(--ink);display:block;letter-spacing:.04em}
+.tst .who span{font-size:11px;color:var(--ink-3);letter-spacing:.06em}
+@media(max-width:860px){
+  .tst-grid{grid-template-columns:1fr}
+  .tst{border-left:0;border-top:1px solid var(--line);padding:36px 0}
+  .tst-grid>*:first-child{border-top:0}
+}
+
+/* ---------- Journal ---------- */
+.jr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px);margin-top:0}
+.jr{background:transparent;border:0;border-radius:0;overflow:visible;transition:none;display:block;color:inherit}
+.jr:hover{transform:none;box-shadow:none}
+.jr .cover,.jr:nth-child(2) .cover,.jr:nth-child(3) .cover{
+  aspect-ratio:4/3;border-radius:var(--r);
+  background:var(--paper-3);border:1px solid var(--line);
+}
+.jr .body{padding:22px 0 0}
+.jr .cat{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.jr h3{margin:14px 0 10px;font-size:20px}
+.jr p{color:var(--ink-2);font-size:14px}
+@media(max-width:860px){.jr-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- Enquiry block (replaces the "buy" CTA) ---------- */
+.cta{
+  background:var(--paper-2);border:0;border-top:1px solid var(--ink);
+  border-radius:0;text-align:center;padding:clamp(64px,9vw,112px) var(--gut);
+}
+.cta h2{margin-bottom:22px;max-width:16em;margin-left:auto;margin-right:auto}
+.cta p{color:var(--ink-2);max-width:34em;margin:0 auto 40px;font-size:16px}
+
+/* ---------- Misc components kept compatible ---------- */
+.sym-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(30px,5vw,70px)}
+.sym{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink-2)}
+.sym::before{content:"";width:5px;height:5px;border-radius:0;border:0;background:var(--accent);flex:none;opacity:1;transform:translateY(-3px)}
+@media(max-width:720px){.sym-grid{grid-template-columns:1fr}}
+
+.guarantee{display:inline-flex;align-items:center;gap:14px;background:transparent;border:0;border-left:1px solid var(--line-2);border-radius:0;padding:6px 0 6px 20px;font-size:13.5px;color:var(--ink-2)}
+.guarantee .seal{display:none}
+.guarantee b{color:var(--ink);font-weight:500}
+
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,88px);align-items:center}
+.about-art{aspect-ratio:4/5;border-radius:var(--r);background:var(--paper-3);border:1px solid var(--line);position:relative;overflow:hidden}
+.about h2{margin-bottom:24px}
+.about p{margin-bottom:18px;font-size:16px}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:44px}}
+
+/* ---------- Footer ---------- */
+footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);background:var(--paper)}
+.ft-grid{display:flex;justify-content:space-between;gap:44px;flex-wrap:wrap;margin-bottom:56px}
+.ft-col h4{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:18px}
+.ft-col a{display:block;font-size:14px;color:var(--ink-2);margin-bottom:10px;opacity:1;transition:color .2s}
+.ft-col a:hover{color:var(--ink)}
+.disclaimer{font-size:11.5px;line-height:1.7;color:var(--ink-3);border-top:1px solid var(--line);padding-top:26px;max-width:70em}
+.disclaimer strong{color:var(--ink-2);font-weight:500}
+
+/* ---------- Inner pages ---------- */
+.page-hero{padding:clamp(70px,9vw,120px) 0 clamp(40px,5vw,64px);background:var(--paper)}
+.page-hero h1{margin:0 0 22px}
+.page-hero p.lead{font-size:17px;color:var(--ink-2);max-width:36em}
+
+.prose{max-width:38em}
+.prose p{margin-bottom:22px;color:var(--ink-2);font-size:16.5px;line-height:1.78}
+.prose h2{font-size:clamp(26px,3vw,34px);margin:60px 0 18px}
+.prose h3{margin:38px 0 12px}
+.prose blockquote{
+  border-left:1px solid var(--line-2);padding:2px 0 2px 28px;margin:38px 0;
+  font-family:var(--serif);font-size:24px;line-height:1.32;color:var(--ink);font-style:normal;
+}
+.prose ul{margin:0 0 22px;padding-left:20px;color:var(--ink-2)}
+.prose li{margin-bottom:10px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px);align-items:start}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+.media{aspect-ratio:4/5;border-radius:var(--r);background:var(--paper-3);border:1px solid var(--line);position:relative;overflow:hidden}
+
+.svc-detail{
+  border:0;border-bottom:1px solid var(--line);border-radius:0;
+  padding:36px 0;margin-bottom:0;background:transparent;
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:start;
+}
+.svc-detail.feature{background:transparent;border-color:var(--line)}
+.svc-detail .pill{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.svc-detail h3{font-size:24px;margin:12px 0 12px}
+.svc-detail p{color:var(--ink-2);font-size:15px;max-width:44em}
+.svc-detail .right{text-align:right;min-width:170px}
+.svc-detail .price{font-family:var(--serif);font-size:28px;color:var(--ink)}
+.svc-detail .price small{font-size:12px;color:var(--ink-3);font-family:var(--sans)}
+.svc-detail .note{font-size:11.5px;color:var(--ink-3);margin-top:6px;letter-spacing:.04em}
+@media(max-width:860px){.svc-detail{grid-template-columns:1fr}.svc-detail .right{text-align:left}}
+
+.faq-item{border-bottom:1px solid var(--line);padding:30px 0}
+.faq-item h3{margin-bottom:12px}
+.faq-item p{color:var(--ink-2);font-size:15px;max-width:46em}
+
+.case{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:34px 0;margin-bottom:0}
+.case h4{font-family:var(--serif);font-size:21px;margin-bottom:14px}
+.case p{color:var(--ink-2);font-size:15px;margin-bottom:12px}
+.case .tl{font-size:11.5px;color:var(--ink-3);font-style:normal;letter-spacing:.1em;text-transform:uppercase}
+
+.article-hero{padding:clamp(60px,8vw,100px) 0 24px}
+.article-hero .cat{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.article-hero h1{max-width:16em;margin:22px 0 22px}
+.article-hero .meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.article-hero .meta b{color:var(--ink);font-weight:500}
+.article-cover{aspect-ratio:16/9;border-radius:var(--r);background:var(--paper-3);border:1px solid var(--line);margin-top:40px}
+.article-body{padding:clamp(48px,6vw,76px) 0 clamp(70px,10vw,120px)}
+.pull{background:transparent;border-left:1px solid var(--line-2);border-radius:0;padding:4px 0 4px 28px;margin:38px 0;font-size:15px;color:var(--ink-2)}
+.pull b{color:var(--ink);font-weight:500}
+.inline-cta{
+  border:0;border-top:1px solid var(--ink);border-radius:0;padding:34px 0 0;margin:56px 0 0;
+  display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;background:transparent;
+}
+.inline-cta p{margin:0;color:var(--ink-2);font-size:14.5px;max-width:32em}
+.inline-cta b{color:var(--ink);font-family:var(--serif);font-size:20px;font-weight:400;display:block;margin-bottom:6px}
+
+/* ---------- Legacy classes neutralised ---------- */
+.prod-card{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:40px 0;box-shadow:none}
+.prod-card .price{font-family:var(--serif);font-size:40px;color:var(--ink)}
+.prod-card .price small{font-size:13px;color:var(--ink-3);font-family:var(--sans)}
+.prod-card ul{list-style:none;margin-top:18px}
+.prod-card li{padding:12px 0 12px 22px;position:relative;font-size:15px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.prod-card li::before{content:"";position:absolute;left:0;top:22px;width:5px;height:5px;background:var(--accent)}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px);align-items:start}
+.prod-steps{margin-top:8px}
+.prod-step{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.prod-step .n{width:auto;height:auto;border-radius:0;background:none;color:var(--ink-3);font-family:var(--serif);font-weight:400;font-size:15px;display:block;flex:none}
+.prod-step h4{font-size:15px;font-family:var(--sans);font-weight:500;color:var(--ink);margin-bottom:4px}
+.prod-step p{color:var(--ink-2);font-size:14px}
+@media(max-width:860px){.prod-grid{grid-template-columns:1fr}}
+.lead-magnet{background:var(--paper-2);border-radius:0;border-top:1px solid var(--ink);padding:clamp(56px,7vw,88px) var(--gut);text-align:center;max-width:none;margin:0}
+.lead-magnet h2{margin-bottom:18px}
+.lead-magnet p{color:var(--ink-2);max-width:32em;margin:0 auto 30px;font-size:16px}
+.lm-form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.lm-form input{flex:1;min-width:220px;padding:16px 18px;border-radius:var(--r);border:1px solid var(--line-2);background:var(--paper);font-size:14px;font-family:var(--sans);color:var(--ink)}
+.lm-form input:focus{outline:none;border-color:var(--accent)}
+.lm-note{font-size:11.5px;color:var(--ink-3);margin-top:16px}
+
+/* ---------- Motion: only fades, never lifts ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+}
+
+/* ===========================================================
+   NINGBO PROGRAMME — page-specific
+   Namespaced (.np-*) so nothing collides with the shared system.
+   Signature: the 寸關尺 pulse figure. Everything else stays quiet.
+   =========================================================== */
+
+/* Han characters carry the classical material. Never decorative. */
+.han{font-family:var(--han);font-weight:400;letter-spacing:.06em}
+
+/* --- Hero: the thesis is method and time, not a place --- */
+.np-hero{padding:clamp(74px,10vw,138px) 0 clamp(56px,7vw,92px);border-bottom:1px solid var(--line)}
+.np-hero h1{max-width:13em;margin:0 0 34px}
+.np-hero .lede{font-size:18px;line-height:1.68;color:var(--ink-2);max-width:33em}
+.np-hero .meta{
+  display:flex;flex-wrap:wrap;gap:0;margin-top:56px;
+  border-top:1px solid var(--line);
+}
+.np-hero .meta div{
+  padding:22px 34px 0 0;margin-right:34px;
+  border-right:1px solid var(--line);
+}
+.np-hero .meta div:last-child{border-right:0;margin-right:0;padding-right:0}
+.np-hero .meta dt{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:8px;
+}
+.np-hero .meta dd{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--ink)}
+@media(max-width:720px){
+  .np-hero .meta div{border-right:0;margin-right:0;padding:18px 0 0;width:100%;border-top:1px solid var(--line)}
+  .np-hero .meta div:first-child{border-top:0}
+}
+
+/* --- 望聞問切 The four examinations. Four, because there are four. --- */
+.np-exam{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink)}
+.np-exam-col{padding:40px 30px 46px;border-left:1px solid var(--line)}
+.np-exam-col:first-child{border-left:0;padding-left:0}
+.np-exam-col .glyph{
+  font-family:var(--han);font-size:40px;line-height:1;color:var(--ink);
+  display:block;margin-bottom:6px;
+}
+.np-exam-col .rom{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-3);display:block;margin-bottom:22px;
+}
+.np-exam-col h3{font-size:19px;margin-bottom:12px}
+.np-exam-col p{font-size:14px;color:var(--ink-2)}
+@media(max-width:860px){
+  .np-exam{grid-template-columns:repeat(2,1fr)}
+  .np-exam-col{border-left:0;border-top:1px solid var(--line);padding:32px 0 36px}
+  .np-exam-col:nth-child(even){padding-left:30px;border-left:1px solid var(--line)}
+  .np-exam-col:nth-child(-n+2){border-top:0}
+}
+@media(max-width:560px){
+  .np-exam{grid-template-columns:1fr}
+  .np-exam-col:nth-child(even){padding-left:0;border-left:0}
+  .np-exam-col:nth-child(2){border-top:1px solid var(--line)}
+}
+
+/* --- SIGNATURE: the pulse figure. The one loud thing on the page. --- */
+.np-pulse{background:var(--paper-2);border-top:1px solid var(--ink)}
+.np-pulse-in{padding:clamp(70px,9vw,124px) 0}
+.np-pulse-head{max-width:34em;margin-bottom:clamp(48px,6vw,76px)}
+.np-pulse-fig{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(30px,5vw,70px);align-items:start;
+}
+.np-wrist{position:relative}
+.np-wrist svg{width:100%;height:auto;display:block;overflow:visible}
+.np-wrist figcaption{
+  margin-top:22px;padding-top:16px;border-top:1px solid var(--line-2);
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);
+}
+/* the seal: the single place cinnabar appears */
+.np-seal{fill:var(--accent)}
+.np-pulse-key{
+  margin-top:clamp(44px,5vw,64px);padding-top:26px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px);
+}
+.np-pulse-key div h4{
+  font-family:var(--han);font-size:21px;font-weight:400;color:var(--ink);margin-bottom:4px;
+}
+.np-pulse-key div .rom{
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);
+  display:block;margin-bottom:12px;
+}
+.np-pulse-key div p{font-size:13.5px;color:var(--ink-2)}
+.np-pulse-note{
+  margin-top:38px;padding-left:20px;border-left:1px solid var(--accent);
+  font-size:12.5px;color:var(--ink-3);max-width:44em;
+}
+@media(max-width:720px){
+  .np-pulse-fig{grid-template-columns:1fr;gap:48px}
+  .np-pulse-key{grid-template-columns:1fr;gap:28px}
+}
+
+/* --- The week. A real sequence, so it is numbered. --- */
+.np-days{border-top:1px solid var(--ink)}
+.np-day{
+  display:grid;grid-template-columns:92px 200px 1fr;gap:clamp(20px,3vw,44px);
+  padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline;
+}
+.np-day .d{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.np-day h4{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--ink)}
+.np-day p{font-size:14px;color:var(--ink-2);margin:0}
+@media(max-width:820px){
+  .np-day{grid-template-columns:1fr;gap:8px;padding:26px 0}
+}
+
+/* --- Included / not included. Transparency is the premium signal. --- */
+.np-incl{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink)}
+.np-incl-col{padding:40px 44px 46px;border-left:1px solid var(--line)}
+.np-incl-col:first-child{border-left:0;padding-left:0}
+.np-incl-col h3{font-size:19px;margin-bottom:26px}
+.np-incl-col ul{list-style:none}
+.np-incl-col li{
+  padding:13px 0 13px 22px;border-bottom:1px solid var(--line);
+  font-size:14.5px;color:var(--ink-2);position:relative;
+}
+.np-incl-col li::before{
+  content:"";position:absolute;left:0;top:22px;
+  width:9px;height:1px;background:var(--ink-3);
+}
+.np-incl-col.out li::before{background:var(--line-2)}
+.np-incl-col.out li{color:var(--ink-3)}
+@media(max-width:720px){
+  .np-incl{grid-template-columns:1fr}
+  .np-incl-col{border-left:0;border-top:1px solid var(--line);padding:32px 0 36px}
+  .np-incl-col:first-child{border-top:0}
+}
+
+/* --- Who this is not for. Saying no is the strongest trust signal at this price. --- */
+.np-limits{border-top:1px solid var(--ink);padding-top:clamp(40px,5vw,60px)}
+.np-limits-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(36px,5vw,80px);align-items:start}
+.np-limits ul{list-style:none;border-top:1px solid var(--line)}
+.np-limits li{
+  padding:20px 0;border-bottom:1px solid var(--line);
+  font-size:15px;color:var(--ink-2);
+}
+.np-limits li b{color:var(--ink);font-weight:500}
+@media(max-width:820px){.np-limits-grid{grid-template-columns:1fr;gap:36px}}
+
+/* --- Cost --- */
+.np-cost{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,88px);align-items:start}
+.np-cost .figure{font-family:var(--serif);font-size:clamp(46px,5.2vw,66px);font-weight:300;color:var(--ink);line-height:1;letter-spacing:-.025em}
+.np-cost .figure small{
+  display:block;font-family:var(--sans);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;letter-spacing:.22em;
+}
+.np-cost-factors{border-top:1px solid var(--line)}
+.np-cost-factors li{list-style:none;padding:20px 0;border-bottom:1px solid var(--line)}
+.np-cost-factors b{display:block;color:var(--ink);font-weight:500;font-size:15px;margin-bottom:4px}
+.np-cost-factors p{font-size:14px;color:var(--ink-2);margin:0}
+@media(max-width:820px){.np-cost{grid-template-columns:1fr;gap:40px}}
+
+/* --- Quality floor --- */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- Fillout intake modal ----------
+   Ported from styles.css (the July intake work) and retuned to the v2 tokens.
+   Behaviour lives in fillout-modal.js; these are only its surfaces. */
+.fo-overlay{position:fixed;inset:0;z-index:100;background:rgba(26,26,26,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s;pointer-events:none}
+.fo-overlay.open{opacity:1;pointer-events:auto}
+.fo-modal{position:relative;width:min(720px,100%);height:min(780px,92vh);background:var(--paper);border:1px solid var(--line-2);border-radius:var(--r);box-shadow:0 40px 90px -30px rgba(26,26,26,.45);overflow:hidden;transform:translateY(14px);transition:transform .25s}
+.fo-overlay.open .fo-modal{transform:none}
+.fo-modal iframe{width:100%;height:100%;border:0;display:block}
+.fo-close{position:absolute;top:10px;right:10px;z-index:2;width:34px;height:34px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);color:var(--ink-3);font-size:18px;line-height:1;cursor:pointer;transition:color .15s}
+.fo-close:hover{color:var(--ink)}
+/* "Start fresh": Fillout silently restores this device's last session, so after a
+   purchase the form reopens on the finished page. Buying a second one (a partner,
+   a parent) has no way out without this. */
+.fo-fresh{position:absolute;top:10px;left:10px;z-index:2;padding:8px 14px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);color:var(--ink-3);font-family:var(--sans);font-size:13px;font-weight:500;line-height:1;cursor:pointer;transition:color .15s,border-color .15s}
+.fo-fresh:hover{color:var(--accent);border-color:var(--accent)}
+body.fo-lock{overflow:hidden}
+/* Loading state: the embed pulls a lot of JS, so never show an empty modal. */
+.fo-frame{width:100%;height:100%}
+.fo-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font-size:14px;color:var(--ink-3);letter-spacing:.02em;background:var(--paper);z-index:1;transition:opacity .3s}
+.fo-spin{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--accent);animation:fo-rot .7s linear infinite}
+@keyframes fo-rot{to{transform:rotate(360deg)}}
+.fo-overlay.fo-ready .fo-loading{opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.fo-spin{animation-duration:2s}}
+
+/* Section grounds inherited from the July pages, retuned to the v2 palette. */
+section.block.symptoms{background:var(--paper-2)}
+section.block.product{background:var(--paper)}
