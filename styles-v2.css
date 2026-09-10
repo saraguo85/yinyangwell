@@ -179,7 +179,7 @@ nav{
 
 /* ---------- Trust strip — hairline separated, serif figures ---------- */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.trust-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-in{display:grid;grid-template-columns:repeat(5,1fr)}
 .trust .item{padding:42px 30px;border-left:1px solid var(--line)}
 .trust .item:first-child{border-left:0;padding-left:0}
 .trust .num{font-family:var(--serif);font-size:38px;color:var(--ink);line-height:1;margin-bottom:12px}
