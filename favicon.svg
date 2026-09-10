@@ -13,8 +13,8 @@
   </style>
   <rect class="tile" width="64" height="64" rx="2"/>
   <!-- Yin-yang, drawn as one path so it stays legible at 16px -->
-  <path class="mark" d="M32 12a20 20 0 0 0 0 40 10 10 0 0 1 0-20 10 10 0 0 0 0-20z"/>
-  <circle class="hole" cx="32" cy="22" r="3.4"/>
-  <circle class="mark" cx="32" cy="42" r="3.4"/>
-  <circle class="ring" cx="32" cy="32" r="20" fill="none" stroke-width="2.5"/>
+  <path class="mark" d="M32 6a26 26 0 0 0 0 52 13 13 0 0 1 0-26 13 13 0 0 0 0-26z"/>
+  <circle class="hole" cx="32" cy="19" r="4.4"/>
+  <circle class="mark" cx="32" cy="45" r="4.4"/>
+  <circle class="ring" cx="32" cy="32" r="26" fill="none" stroke-width="2.8"/>
 </svg>
