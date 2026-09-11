@@ -340,7 +340,7 @@ nav{
 .jr:hover{transform:none;box-shadow:none}
 .jr .cover,.jr:nth-child(2) .cover,.jr:nth-child(3) .cover{
   aspect-ratio:4/3;border-radius:var(--r);
-  background:var(--paper-3);border:1px solid var(--line);
+  background:var(--paper-3) 50% 50%/cover no-repeat;border:1px solid var(--line);
 }
 .jr .body{padding:22px 0 0}
 .jr .cat{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:500}

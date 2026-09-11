@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="A twenty-four hour dial with the hours between one and three in the morning marked">
+  <rect width="400" height="300" fill="#F4F3EF"/>
+  <path d="M200 150 L224.6 58.2 A95 95 0 0 1 267.2 82.8 Z" fill="#8C2E22" fill-opacity=".08"/>
+  <g stroke="#DDDCD6" stroke-width="1">
+    <path d="M200 150 L200 55 M200 150 L247.5 67.7 M200 150 L282.3 102.5 M200 150 L295 150 M200 150 L282.3 197.5 M200 150 L247.5 232.3 M200 150 L200 245 M200 150 L152.5 232.3 M200 150 L117.7 197.5 M200 150 L105 150 M200 150 L117.7 102.5 M200 150 L152.5 67.7"/>
+  </g>
+  <circle cx="200" cy="150" r="95" fill="none" stroke="#CFCEC7" stroke-width="1"/>
+  <path d="M224.6 58.2 A95 95 0 0 1 267.2 82.8" fill="none" stroke="#8C2E22" stroke-width="2.5"/>
+  <path d="M200 150 L224.6 58.2 M200 150 L267.2 82.8" stroke="#8C2E22" stroke-width="1" stroke-opacity=".55"/>
+  <circle cx="200" cy="150" r="2.5" fill="#8C8C86"/>
+  <text x="252" y="44" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2.6" fill="#8C2E22">1–3 AM</text>
+</svg>
