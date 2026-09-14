@@ -149,6 +149,14 @@ nav{
   font-size:17px;line-height:1.72;color:var(--ink-2);
   max-width:32em;margin-bottom:44px;
 }
+/* The practitioner's method, in brief. Sits between the lead and the buttons:
+   smaller than the lead so it reads as a second voice, not a second pitch. */
+.hero-method{
+  font-size:15px;line-height:1.75;color:var(--ink-2);
+  max-width:32em;margin:-22px 0 40px;
+  padding-left:20px;border-left:1px solid var(--line-2);
+}
+@media(max-width:860px){.hero-method{margin-top:-14px;padding-left:16px}}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .hero-trust{
   display:block;
