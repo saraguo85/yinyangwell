@@ -398,6 +398,11 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 }
 .prose ul{margin:0 0 22px;padding-left:20px;color:var(--ink-2)}
 .prose li{margin-bottom:10px}
+.prose figure{margin:36px 0 32px}
+.prose figure img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r)}
+.prose figcaption{
+  margin-top:14px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);
+}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px);align-items:start}
 @media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
 .media{aspect-ratio:4/5;border-radius:var(--r);background:var(--paper-3);border:1px solid var(--line);position:relative;overflow:hidden}
