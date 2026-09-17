@@ -187,7 +187,7 @@ nav{
 
 /* ---------- Trust strip — hairline separated, serif figures ---------- */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.trust-in{display:grid;grid-template-columns:repeat(5,1fr)}
+.trust-in{display:grid;grid-template-columns:repeat(4,1fr)}
 .trust .item{padding:42px 30px;border-left:1px solid var(--line)}
 .trust .item:first-child{border-left:0;padding-left:0}
 .trust .num{font-family:var(--serif);font-size:38px;color:var(--ink);line-height:1;margin-bottom:12px}
@@ -241,6 +241,24 @@ nav{
   .appr-grid,.who-grid{grid-template-columns:1fr}
   .appr-card,.who-card{border-left:0;border-top:1px solid var(--line);padding:36px 0 40px}
   .appr-grid>*:first-child,.who-grid>*:first-child{border-top:0}
+}
+
+/* Four situations rather than three: the two doors people arrive through
+   (nothing on the tests / pain nothing has settled) plus the two things that are
+   true either way. At three columns the fourth card would orphan onto its own row,
+   so this variant goes 2x2 and re-does the dividing lines to match. */
+.who-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.who-grid.cols-2>*:nth-child(odd){border-left:0;padding-left:0}
+.who-grid.cols-2>*:nth-child(n+3){border-top:1px solid var(--line)}
+.who-notes{
+  margin-top:48px;padding-top:34px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(2,1fr);gap:34px;
+}
+.who-notes p{font-size:13.5px;color:var(--ink-3);max-width:34em;line-height:1.7}
+.who-notes b{color:var(--ink-2);font-weight:500}
+@media(max-width:860px){
+  .who-grid.cols-2{grid-template-columns:1fr}
+  .who-notes{grid-template-columns:1fr;gap:22px}
 }
 
 /* ---------- Practitioners — portraits, not avatars ---------- */
