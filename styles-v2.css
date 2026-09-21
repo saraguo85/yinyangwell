@@ -215,6 +215,12 @@ nav{
 .sec-head.split h2{margin-bottom:0}
 .sec-head.split p{max-width:32em;padding-bottom:.28em}
 @media(max-width:860px){.sec-head.split{grid-template-columns:1fr;gap:20px;padding-top:24px}.sec-head.split h2{margin-bottom:0}.sec-head.split p{max-width:38em;padding-bottom:0}}
+/* The practitioner module is the only place where a split head sits directly above
+   a .split body, and the two grids did not agree: the head runs 1.15fr/1fr and the
+   body 1fr/1fr, so the deck started a good 40px to the right of the column beneath
+   it. Match the head to the body here only; every other split head sits above a
+   grid with a different column count, where there is nothing to line up with. */
+#practitioner .sec-head.split{grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px)}
 .sec-head.center p{margin-left:auto;margin-right:auto}
 
 /* ---------- Editorial columns (replaces rounded cards) ---------- */
