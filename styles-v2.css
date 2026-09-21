@@ -259,8 +259,7 @@ nav{
   margin-top:48px;padding-top:34px;border-top:1px solid var(--line);
   display:grid;grid-template-columns:repeat(2,1fr);gap:34px;
 }
-/* One note left once the waiting-list note moved up into the grid. */
-.who-notes.single{grid-template-columns:1fr}
+
 .who-notes p{font-size:13.5px;color:var(--ink-3);max-width:34em;line-height:1.7}
 .who-notes b{color:var(--ink-2);font-weight:500}
 @media(max-width:860px){
