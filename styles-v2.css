@@ -243,17 +243,27 @@ nav{
   .appr-grid>*:first-child,.who-grid>*:first-child{border-top:0}
 }
 
-/* Four situations rather than three: the two doors people arrive through
-   (nothing on the tests / pain nothing has settled) plus the two things that are
-   true either way. At three columns the fourth card would orphan onto its own row,
-   so this variant goes 2x2 and re-does the dividing lines to match. */
+/* Five situations rather than three: the three doors people arrive through
+   (mid-decision on an operation / nothing on the tests / pain nothing has settled)
+   plus the two things that are true either way. At three columns they orphan, so
+   this variant goes two-up and re-does the dividing lines to match.
+   The waiting-list case was a footnote until 2026-09-21; it is the point at which
+   this is most worth doing, so it leads. Its guardrail sentence was promoted with
+   it rather than left behind in the notes: the more prominent the card, the less
+   the disclaimer can sit somewhere the reader may never scroll to. */
 .who-grid.cols-2{grid-template-columns:repeat(2,1fr)}
 .who-grid.cols-2>*:nth-child(odd){border-left:0;padding-left:0}
 .who-grid.cols-2>*:nth-child(n+3){border-top:1px solid var(--line)}
+/* Odd card count: the last one has no partner, so it runs the full row instead of
+   orphaning half of one. It is an odd child, so the rules above already clear its
+   left border. */
+.who-grid.cols-2>.wide{grid-column:1 / -1}
 .who-notes{
   margin-top:48px;padding-top:34px;border-top:1px solid var(--line);
   display:grid;grid-template-columns:repeat(2,1fr);gap:34px;
 }
+/* One note left once the waiting-list note moved up into the grid. */
+.who-notes.single{grid-template-columns:1fr}
 .who-notes p{font-size:13.5px;color:var(--ink-3);max-width:34em;line-height:1.7}
 .who-notes b{color:var(--ink-2);font-weight:500}
 @media(max-width:860px){
