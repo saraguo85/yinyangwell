@@ -13,6 +13,18 @@
   var EMBED_SRC = 'https://server.fillout.com/embed/v1/';
   var overlay = null;
   var warmed = false;
+  // Which product the form is running for. Buttons carry data-product="report" or
+  // "reading"; a button without one (the header Start) asks first. The choice rides
+  // into the form as ?product=<option label>. Fillout's "Your choice" question is set to
+  // default from that parameter, but as of 2026-09-24 the prefill does not take effect
+  // (tested live and in preview), so the customer picks again on the last page and the
+  // payment page is routed from that answer. The parameter still lands in the submission.
+  var PRODUCTS = {
+    report: { name: 'TCM Wellness Report', price: '£69', param: 'TCM Wellness Report · £69', note: 'Written by a senior physician at our partner clinic in Ningbo.' },
+    reading: { name: 'Observation Reading', price: '£850', param: 'Observation Reading · £850', note: 'One independent practitioner, live on video or in writing.' }
+  };
+  var product = null;
+  var pending = null;
 
   function onIdle(fn, timeout) {
     if (window.requestIdleCallback) window.requestIdleCallback(fn, { timeout: timeout || 2000 });
@@ -37,6 +49,7 @@
       overlay.classList.add('fo-ready');
     }
     function watch(f) {
+      if (pending) { var p = pending; pending = null; applyProduct(f, p); return; }
       f.addEventListener('load', ready);
       // already finished before we got here?
       try {
@@ -73,6 +86,15 @@
       '<button class="fo-close" aria-label="Close">×</button>' +
       '<button class="fo-fresh" type="button">Start fresh</button>' +
       '<div class="fo-loading" aria-live="polite"><span class="fo-spin"></span>Loading your assessment…</div>' +
+      '<div class="fo-choose"><div class="fo-choose-in">' +
+        '<h3>Which would you like to start?</h3>' +
+        '<p>Both use the same intake and photographs. You confirm your choice once more before paying, and you pay only for that one.</p>' +
+        Object.keys(PRODUCTS).map(function (k) {
+          var p = PRODUCTS[k];
+          return '<button type="button" class="fo-opt" data-choose="' + k + '"><span class="fo-opt-name">' + p.name +
+            '</span><span class="fo-opt-price">' + p.price + '</span><span class="fo-opt-note">' + p.note + '</span></button>';
+        }).join('') +
+      '</div></div>' +
       '<div class="fo-frame" data-fillout-id="' + FORM_ID + '" data-fillout-embed-type="standard" data-fillout-inherit-parameters></div>' +
       '</div>';
     document.body.appendChild(overlay);
@@ -83,6 +105,9 @@
     overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
     overlay.querySelector('.fo-close').addEventListener('click', close);
     overlay.querySelector('.fo-fresh').addEventListener('click', freshStart);
+    overlay.querySelectorAll('[data-choose]').forEach(function (b) {
+      b.addEventListener('click', function () { choose(b.getAttribute('data-choose')); });
+    });
 
     trackReady();
 
@@ -107,8 +132,32 @@
     trackReady();
   }
 
-  function open() {
+  // Points the embed at the chosen product. Changing the query string reloads the form,
+  // and Fillout keeps a separate saved draft per query string, so each product keeps its
+  // own progress rather than one overwriting the other.
+  function applyProduct(f, p) {
+    var u = new URL(f.src);
+    u.searchParams.delete('fresh');
+    var v = PRODUCTS[p].param;
+    if (u.searchParams.get('product') === v) { overlay.classList.add('fo-ready'); return; }
+    u.searchParams.set('product', v);
+    overlay.classList.remove('fo-ready');
+    f.src = u.toString();
+    trackReady();
+  }
+
+  function choose(p) {
+    product = p;
+    overlay.classList.remove('fo-choosing');
+    var f = overlay.querySelector('iframe');
+    if (f) applyProduct(f, p);
+    else pending = p;
+  }
+
+  function open(p) {
     warm();
+    if (p && PRODUCTS[p]) choose(p);
+    else overlay.classList.add('fo-choosing');
     overlay.setAttribute('aria-hidden', 'false');
     if ('inert' in HTMLElement.prototype) overlay.inert = false;
     document.body.classList.add('fo-lock');
@@ -131,7 +180,7 @@
     var t = e.target.closest('[data-fillout-open]');
     if (!t) return;
     e.preventDefault();
-    open();
+    open(t.getAttribute('data-product'));
   });
 
   // Backstop for the rare case where idle never fires before the user reaches a CTA.

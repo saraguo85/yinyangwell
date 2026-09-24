@@ -675,6 +675,19 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 .fo-fresh{position:absolute;top:10px;left:10px;z-index:2;padding:8px 14px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);color:var(--ink-3);font-family:var(--sans);font-size:13px;font-weight:500;line-height:1;cursor:pointer;transition:color .15s,border-color .15s}
 .fo-fresh:hover{color:var(--accent);border-color:var(--accent)}
 body.fo-lock{overflow:hidden}
+/* product chooser: shown when a Start button does not say which product it is for */
+.fo-choose{position:absolute;inset:0;z-index:3;background:var(--paper);display:none;align-items:center;justify-content:center;padding:56px 28px 28px;overflow:auto}
+.fo-overlay.fo-choosing .fo-choose{display:flex}
+.fo-overlay.fo-choosing .fo-close{z-index:4}
+.fo-overlay.fo-choosing .fo-fresh{display:none}
+.fo-choose-in{width:min(460px,100%)}
+.fo-choose h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;margin-bottom:10px}
+.fo-choose p{font-size:14.5px;color:var(--ink-3);margin-bottom:26px}
+.fo-opt{display:grid;grid-template-columns:1fr auto;gap:4px 16px;width:100%;text-align:left;padding:20px 22px;margin-bottom:12px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--paper);cursor:pointer;font-family:var(--sans);color:var(--ink);transition:border-color .15s}
+.fo-opt:hover,.fo-opt:focus-visible{border-color:var(--ink)}
+.fo-opt-name{font-size:16px;font-weight:500}
+.fo-opt-price{font-family:var(--serif);font-size:22px;grid-row:span 2;align-self:center}
+.fo-opt-note{font-size:13.5px;color:var(--ink-3)}
 /* Loading state: the embed pulls a lot of JS, so never show an empty modal. */
 .fo-frame{width:100%;height:100%}
 .fo-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font-size:14px;color:var(--ink-3);letter-spacing:.02em;background:var(--paper);z-index:1;transition:opacity .3s}
