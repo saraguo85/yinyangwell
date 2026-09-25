@@ -15,7 +15,7 @@
   /* Ink */
   --ink:#1A1A1A;            /* headings, primary text */
   --ink-2:#5A5A56;          /* body, secondary */
-  --ink-3:#8C8C86;          /* captions, meta */
+  --ink-3:#6B6B66;          /* captions, meta */
 
   /* Accent — used sparingly. Restraint is the signal. */
   --accent:#8C2E22;         /* 硃砂 cinnabar — the seal mark. Used at ~1% coverage. */
@@ -221,6 +221,7 @@ nav{
    it. Match the head to the body here only; every other split head sits above a
    grid with a different column count, where there is nothing to line up with. */
 #practitioner .sec-head.split{grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px)}
+@media(max-width:860px){#practitioner .sec-head.split{grid-template-columns:1fr;gap:20px}}
 .sec-head.center p{margin-left:auto;margin-right:auto}
 
 /* ---------- Editorial columns (replaces rounded cards) ---------- */
