@@ -37,7 +37,7 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 body{
   font-family:var(--sans);
   font-size:15px;
@@ -379,6 +379,9 @@ nav{
 .cta{
   background:var(--paper-2);border:0;border-top:1px solid var(--ink);
   border-radius:0;text-align:center;padding:clamp(64px,9vw,112px) var(--gut);
+  /* Full-bleed band: break out of .wrap so the grey runs edge to edge
+     instead of sitting as an inset card with empty strips either side. */
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
 }
 .cta h2{margin-bottom:22px;max-width:16em;margin-left:auto;margin-right:auto}
 .cta p{color:var(--ink-2);max-width:34em;margin:0 auto 40px;font-size:16px}
@@ -416,6 +419,10 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 .page-hero p.lead{font-size:17px;color:var(--ink-2);max-width:36em}
 
 .prose{max-width:38em}
+/* Long-form pages: keep the text column on the same left edge as the page
+   hero, and a little wider, instead of a narrow strip floating mid-page. */
+.wrap.prose{max-width:1180px}
+.wrap.prose>*{max-width:45rem}
 .prose p{margin-bottom:22px;color:var(--ink-2);font-size:16.5px;line-height:1.78}
 .prose h2{font-size:clamp(26px,3vw,34px);margin:60px 0 18px}
 .prose h3{margin:38px 0 12px}
