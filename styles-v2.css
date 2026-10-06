@@ -510,7 +510,7 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 }
 
 /* ===========================================================
-   NINGBO PROGRAMME — page-specific
+   SESSIONS IN CHINA: page-specific
    Namespaced (.np-*) so nothing collides with the shared system.
    Signature: the 寸關尺 pulse figure. Everything else stays quiet.
    =========================================================== */
@@ -518,30 +518,45 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 /* Han characters carry the classical material. Never decorative. */
 .han{font-family:var(--han);font-weight:400;letter-spacing:.06em}
 
-/* --- Hero: the thesis is method and time, not a place --- */
+/* --- Hero: the principle, then what sets the method apart --- */
 .np-hero{padding:clamp(74px,10vw,138px) 0 clamp(56px,7vw,92px);border-bottom:1px solid var(--line)}
 .np-hero h1{max-width:13em;margin:0 0 34px}
 .np-hero .lede{font-size:18px;line-height:1.68;color:var(--ink-2);max-width:33em}
+.np-intro{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(40px,6vw,88px);align-items:end}
+.np-intro h1{margin:0}
+.np-intro .lede{max-width:none;margin:0}
+.np-points{list-style:none;margin:clamp(56px,7vw,88px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.np-points li{padding:28px 32px 0 0}
+.np-points li+li{padding-left:32px;border-left:1px solid var(--line)}
+.np-points b{display:block;font-family:var(--serif);font-size:21px;font-weight:400;color:var(--ink);margin-bottom:8px}
+.np-points span{font-size:14.5px;line-height:1.6;color:var(--ink-2)}
 .np-hero .meta{
-  display:flex;flex-wrap:wrap;gap:0;margin-top:56px;
-  border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;
+  margin-top:56px;border-top:1px solid var(--line);
 }
-.np-hero .meta div{
-  padding:22px 34px 0 0;margin-right:34px;
-  border-right:1px solid var(--line);
-}
-.np-hero .meta div:last-child{border-right:0;margin-right:0;padding-right:0}
+.np-hero .meta div{padding:22px 28px 0;border-left:1px solid var(--line)}
+.np-hero .meta div:first-child{border-left:0;padding-left:0}
+.np-hero .meta div:last-child{padding-right:0}
 .np-hero .meta dt{
   font-size:10px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--ink-3);margin-bottom:8px;
 }
-.np-hero .meta dd{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--ink)}
+.np-hero .meta dd{font-family:var(--serif);font-size:clamp(18px,1.5vw,21px);font-weight:300;color:var(--ink)}
+@media(max-width:960px){
+  .np-hero .meta{grid-template-columns:1fr 1fr;justify-content:stretch;row-gap:22px}
+  .np-hero .meta div:nth-child(odd){border-left:0;padding-left:0}
+}
 @media(max-width:720px){
-  .np-hero .meta div{border-right:0;margin-right:0;padding:18px 0 0;width:100%;border-top:1px solid var(--line)}
+  .np-hero .meta{grid-template-columns:1fr;row-gap:0}
+  .np-intro{grid-template-columns:1fr;gap:28px}
+  .np-points{grid-template-columns:1fr}
+  .np-points li,.np-points li+li{padding:22px 0;border-left:0}
+  .np-points li+li{border-top:1px solid var(--line)}
+  .np-hero .meta div,.np-hero .meta div:first-child{padding:18px 0 0;border-left:0;border-top:1px solid var(--line)}
   .np-hero .meta div:first-child{border-top:0}
 }
 
-/* --- 望聞問切 The four examinations. Four, because there are four. --- */
+/* --- Column grid with a Chinese glyph per column (her three treatments) --- */
 .np-exam{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink)}
 .np-exam-col{padding:40px 30px 46px;border-left:1px solid var(--line)}
 .np-exam-col:first-child{border-left:0;padding-left:0}
@@ -565,6 +580,12 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
   .np-exam{grid-template-columns:1fr}
   .np-exam-col:nth-child(even){padding-left:0;border-left:0}
   .np-exam-col:nth-child(2){border-top:1px solid var(--line)}
+}
+.np-exam.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){
+  .np-exam.three{grid-template-columns:1fr}
+  .np-exam.three .np-exam-col{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .np-exam.three .np-exam-col:first-child{border-top:0}
 }
 
 /* --- SIGNATURE: the pulse figure. The one loud thing on the page. --- */
