@@ -231,6 +231,7 @@ nav{
 .prac-copy h3{margin:0 0 6px}
 .prac-facts{margin:0;padding:0;border-top:1px solid var(--line)}
 .prac-facts li{list-style:none;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:15px}
+.after-grid{margin-top:clamp(48px,6vw,80px)}
 @media(max-width:860px){.prac-grid{grid-template-columns:1fr;gap:36px}.prac-photo{max-width:340px}}
 #practitioner .sec-head.split{grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px)}
 @media(max-width:860px){#practitioner .sec-head.split{grid-template-columns:1fr;gap:20px}}
