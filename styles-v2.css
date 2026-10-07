@@ -437,6 +437,12 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 .prose figcaption{
   margin-top:14px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);
 }
+/* About: magazine-style story, text wraps round the portrait then runs full width */
+.story .prose{max-width:820px;margin:0 auto}
+.story .story-photo{float:left;width:min(300px,42%);margin:6px 40px 24px 0}
+.story .prose blockquote,.story .prose h2{display:flow-root}
+.story .prose::after{content:"";display:block;clear:both}
+@media(max-width:640px){.story .story-photo{float:none;width:100%;margin:0 0 28px}}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px);align-items:start}
 @media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
 .media{aspect-ratio:4/5;border-radius:var(--r);background:var(--paper-3);border:1px solid var(--line);position:relative;overflow:hidden}
