@@ -224,6 +224,14 @@ nav{
 .svc-tag{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:.02em;padding:10px 20px 10px 10px;border-radius:999px;margin-bottom:26px}
 .svc-tag .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;letter-spacing:.04em}
 .pract .intro{max-width:46em;color:var(--ink-2);margin:0 0 clamp(36px,4vw,56px)}
+.prac-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,96px);align-items:center}
+.prac-photo{max-width:440px}
+.prac-copy h2{margin:0 0 20px}
+.prac-copy .prac-intro{color:var(--ink-2);font-size:16.5px;margin:0 0 36px;max-width:34em}
+.prac-copy h3{margin:0 0 6px}
+.prac-facts{margin:0;padding:0;border-top:1px solid var(--line)}
+.prac-facts li{list-style:none;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:15px}
+@media(max-width:860px){.prac-grid{grid-template-columns:1fr;gap:36px}.prac-photo{max-width:340px}}
 #practitioner .sec-head.split{grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px)}
 @media(max-width:860px){#practitioner .sec-head.split{grid-template-columns:1fr;gap:20px}}
 .sec-head.center p{margin-left:auto;margin-right:auto}
