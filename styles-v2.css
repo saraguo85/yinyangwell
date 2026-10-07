@@ -395,6 +395,8 @@ nav{
      instead of sitting as an inset card with empty strips either side. */
   margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
 }
+/* A full-bleed .cta band wrapped in section.block: drop the section padding so no white strip sits above or below the grey band */
+section.block:has(> .wrap > .cta:only-child){padding:0}
 .cta h2{margin-bottom:22px;max-width:16em;margin-left:auto;margin-right:auto}
 .cta p{color:var(--ink-2);max-width:34em;margin:0 auto 40px;font-size:16px}
 
