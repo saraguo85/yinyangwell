@@ -417,6 +417,14 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 .page-hero{padding:clamp(70px,9vw,120px) 0 clamp(40px,5vw,64px);background:var(--paper)}
 .page-hero h1{margin:0 0 22px}
 .page-hero p.lead{font-size:17px;color:var(--ink-2);max-width:36em}
+/* Plain page heroes: headline left, lead right, bottom-aligned so the row is filled.
+   Heroes carrying CTAs (the report page) keep the stacked layout. */
+@media(min-width:861px){
+  .page-hero .wrap:not(:has(.hero-cta)){display:grid;grid-template-columns:1.3fr 1fr;column-gap:clamp(48px,6vw,110px);align-items:end}
+  .page-hero .wrap:not(:has(.hero-cta)) .eyebrow{grid-column:1/-1}
+  .page-hero .wrap:not(:has(.hero-cta)) h1{grid-column:1;margin:0}
+  .page-hero .wrap:not(:has(.hero-cta)) p.lead{grid-column:2;margin:0 0 .45em;max-width:none;border-left:1px solid var(--line);padding-left:clamp(20px,2.4vw,32px)}
+}
 
 .prose{max-width:38em}
 /* Long-form pages: keep the text column on the same left edge as the page
