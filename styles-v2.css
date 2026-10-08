@@ -770,3 +770,7 @@ body.fo-lock{overflow:hidden}
 /* Section grounds inherited from the July pages, retuned to the v2 palette. */
 section.block.symptoms{background:var(--paper-2)}
 section.block.product{background:var(--paper)}
+
+/* One-line terms summary under a purchase CTA; full text lives on terms.html */
+.cta p.cta-terms{font-size:13px;color:var(--ink-3);max-width:40em;margin:26px auto 0;line-height:1.6}
+.cta p.cta-terms a{color:inherit;text-decoration:underline;text-underline-offset:3px}
