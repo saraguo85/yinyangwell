@@ -142,18 +142,20 @@ nav{
 @media(max-width:980px){.nav-links{display:none}}
 
 /* ---------- Hero ---------- */
-.hero{padding:clamp(70px,10vw,132px) 0 clamp(60px,8vw,104px)}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(40px,6vw,90px);align-items:center}
-.hero h1{margin:0 0 30px}
+/* Tighter than a full splash: the headline is a question, so it wraps to several
+   lines; a smaller size and less padding keep the buttons above the fold. */
+.hero{padding:clamp(48px,6vw,84px) 0 clamp(36px,4.5vw,64px)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:stretch}
+.hero h1{font-size:clamp(34px,4.1vw,52px);margin:0 0 22px}
 .hero p.lead{
   font-size:17px;line-height:1.72;color:var(--ink-2);
-  max-width:32em;margin-bottom:44px;
+  max-width:32em;margin-bottom:38px;
 }
 /* The practitioner's method, in brief. Sits between the lead and the buttons:
    smaller than the lead so it reads as a second voice, not a second pitch. */
 .hero-method{
   font-size:15px;line-height:1.75;color:var(--ink-2);
-  max-width:32em;margin:-22px 0 40px;
+  max-width:32em;margin:-18px 0 32px;
   padding-left:20px;border-left:1px solid var(--line-2);
 }
 @media(max-width:860px){.hero-method{margin-top:-14px;padding-left:16px}}
@@ -166,10 +168,14 @@ nav{
 .hero-trust b{color:var(--ink);font-weight:500}
 
 /* Imagery. Square corners, no shadow — a photograph, not a card. */
+/* Desktop: the photo stretches to the text column's height (no empty band above
+   it); on mobile it falls back to a fixed 4:5 frame. */
 .hero-art{
-  aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;position:relative;
+  min-height:100%;border-radius:var(--r);overflow:hidden;position:relative;
   background:var(--paper-3);border:1px solid var(--line);
 }
+/* Absolute so the photo's own 4:5 size never sets the row height. */
+.hero-art img{position:absolute;inset:0}
 .hero-art .tag{
   position:absolute;left:0;bottom:0;right:0;
   background:rgba(255,255,255,.94);
@@ -183,7 +189,7 @@ nav{
   color:var(--ink-3);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
   text-align:center;padding:24px;
 }
-@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:44px}}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero-art{aspect-ratio:4/5;min-height:0}}
 
 /* ---------- Trust strip — hairline separated, serif figures ---------- */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
