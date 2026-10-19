@@ -151,8 +151,8 @@ nav{
   font-size:17px;line-height:1.72;color:var(--ink-2);
   max-width:32em;margin-bottom:38px;
 }
-/* The practitioner's method, in brief. Sits between the lead and the buttons:
-   smaller than the lead so it reads as a second voice, not a second pitch. */
+/* The practitioner's method, in brief. Sits under the practitioner cards on the homepage:
+   smaller than body copy so it reads as a second voice, not a second pitch. */
 .hero-method{
   font-size:15px;line-height:1.75;color:var(--ink-2);
   max-width:32em;margin:-18px 0 32px;
