@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://server.fillout.com">
 <link rel="preconnect" href="https://embed.fillout.com" crossorigin>
-<link rel="stylesheet" href="styles-v2.css?v=20261020a">
+<link rel="stylesheet" href="styles-v2.css?v=20261020b">
 </head>
 <body>
 
@@ -40,7 +40,8 @@
 <section class="block">
   <div class="wrap">
 
-    <div class="svc-detail" id="report">
+    <div class="svc-detail has-thumb" id="report">
+      <div class="svc-thumb"><img src="images/team/youyang.jpg" alt="A physician at Baoputang Clinic" width="400" height="500" loading="lazy"></div>
       <div>
         <span class="pill">For everyday changes</span>
         <h3>TCM Wellness Report</h3>
@@ -54,7 +55,8 @@
       </div>
     </div>
 
-    <div class="svc-detail" id="reading">
+    <div class="svc-detail has-thumb" id="reading">
+      <div class="svc-thumb"><img src="images/practitioner/likeness-drawn.jpg?v=20261019" alt="A drawn likeness of the practitioner" width="400" height="500" loading="lazy"></div>
       <div>
         <span class="pill">For the whole picture · Opens the way to China</span>
         <h3>Observation Reading</h3>
@@ -68,7 +70,8 @@
       </div>
     </div>
 
-    <div class="svc-detail">
+    <div class="svc-detail has-thumb">
+      <div class="svc-thumb"><img src="images/practitioner/rooms-treatment.jpg" alt="A treatment room at her practice in China" width="400" height="500" loading="lazy"></div>
       <div>
         <span class="pill">Only after a reading</span>
         <h3>Being seen in person, in China</h3>
@@ -163,5 +166,13 @@
 
 <script src="fillout-modal.js?v=20260930" defer></script>
 
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var els=document.querySelectorAll('.page-hero .wrap, .svc-detail, .sec-head, .np-incl-col, .prod-step, .cta');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(el){el.classList.add('reveal');io.observe(el);});
+})();
+</script>
 </body>
 </html>
