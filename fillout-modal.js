@@ -20,8 +20,8 @@
   // (tested live and in preview), so the customer picks again on the last page and the
   // payment page is routed from that answer. The parameter still lands in the submission.
   var PRODUCTS = {
-    report: { name: 'TCM Wellness Report', price: '£79', param: 'TCM Wellness Report · £79', note: 'Written by a senior physician at our partner clinic in Ningbo.' },
-    reading: { name: 'Observation Reading', price: '£850', param: 'Observation Reading · £850', note: 'One independent practitioner, live on video or in writing.' }
+    report: { name: 'TCM Wellness Report', price: '£79', param: 'TCM Wellness Report · £79', note: 'Your own everyday plan: what to eat, how to sleep, and the three changes to start with.' },
+    reading: { name: 'Observation Reading', price: '£850', param: 'Observation Reading · £850', note: 'An in-depth read of your whole picture and where she thinks it began. Also the way in to sessions in China.' }
   };
   var product = null;
   var pending = null;

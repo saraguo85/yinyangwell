@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://server.fillout.com">
 <link rel="preconnect" href="https://embed.fillout.com" crossorigin>
-<link rel="stylesheet" href="styles-v2.css?v=20261020c">
+<link rel="stylesheet" href="styles-v2.css?v=20261022j">
 <script>if(location.hash==="#practitioners")location.replace("practitioners.html");</script>
 </head>
 <body>
@@ -19,13 +19,14 @@
 <nav>
   <div class="wrap nav-in">
     <a href="index.html" class="logo">YinYang <span>Well</span></a>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="services.html">Services</a>
       <a href="sessions-in-china.html">Sessions in China</a>
       <a href="practitioners.html">Who We Work With</a>
       <a href="about.html">Our Story</a>
       <a href="journal.html">The TCM Edit</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
     <a href="https://forms.fillout.com/t/94MTXD2bFeus" data-fillout-open class="btn">Start</a>
   </div>
 </nav>
@@ -41,20 +42,20 @@
   <div class="wrap story">
     <div class="prose">
       <div class="story-photo media"><img src="images/sara.jpg" alt="Sara" width="800" height="1000" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <p>I've worked in digital marketing since 2009, and in 2022 I started my own content creator agency. Building a business was relentless: long days, not much rest. And since moving to the UK almost twenty years ago, I'd been eating and living much the way everyone around me did.</p>
+      <p>I've worked in digital marketing since 2009, and in 2022 I started my own TikTok creator agency. Building a business was relentless: long days, not much rest. And since moving to the UK almost twenty years ago, I'd been eating and living much the way everyone around me did.</p>
       <p>Early last year my body started to push back. Mouth ulcers came almost every month. Every cold turned into a cough I couldn't shake, once for three months. I went back to my doctor again and again. At first nothing showed up on the tests; later I needed two rounds of antibiotics for a chest infection. But nobody could tell me why it kept happening.</p>
       <h2>Where Traditional Chinese Medicine came in</h2>
-      <p>I took it to a Traditional Chinese Medicine doctor, and it was the first time anyone looked past the symptom itself. I was asked what I ate and when, how I slept, how I worked, whether I ran cold. The changes that followed were ordinary: warm food over cold, earlier nights, a steadier rhythm to the day. For once I actually kept to them.</p>
+      <p>I took it to a Traditional Chinese Medicine physician, one of those I now work with, and it was the first time anyone looked past the symptom itself. I was asked whether I ran cold or hot, how I slept, what my appetite and digestion were like, even whether sweating left me feeling lighter or more tired. The changes that followed were ordinary ones, and the biggest were in what I ate, how I dressed, how I moved and how I slept. None of it was dramatic, and for once I actually kept to it.</p>
       <h2>From curiosity to the clinic</h2>
-      <p>After that I couldn't stop. I spend a lot of my spare time studying Traditional Chinese Medicine online and reading the classics, and I go back to China for a few weeks at a time to shadow senior Traditional Chinese Medicine doctors, sitting in on their consultations: watching how they read a person, and learning the classical system (the <em>Si Sheng Xin Yuan</em>, Huang Yuanyu's lineage) that underpins everything we do.</p>
+      <p>After that I couldn't stop. I spend a lot of my spare time studying Traditional Chinese Medicine online and reading the classics, and I go back to China for a few weeks at a time to shadow senior Traditional Chinese Medicine physicians, sitting in on their consultations: watching how they read a person, and learning the classical system (the <em>Si Sheng Xin Yuan</em>, Huang Yuanyu's lineage) that underpins everything we do.</p>
       <p>The more I learned, the more I saw how many of my old habits had been wearing me down, and how many things that are completely normal here in the UK are ones Traditional Chinese Medicine would quietly question: the iced drinks, the cold lunches, the big dinner at the end of the day.</p>
       <h2>Why I share it</h2>
       <p>So I started making short videos about it: small, everyday things, explained in plain English, for anyone they might help.</p>
-      <p>I'm a TCM enthusiast and educator, not a licensed practitioner. I don't diagnose or treat. What I've built is a bridge, so the depth of the people I work with can actually reach people here, in plain English, made for modern life.</p>
-      <blockquote>"Real Traditional Chinese Medicine isn't mystical. It's a deeply practical way of reading the body, refined over more than 2,000 years. It just never got translated for people like us."</blockquote>
+      <p>I'm a TCM enthusiast and educator rather than a practitioner, so the reading itself is always done by the people I work with. What I've built is the bridge, so their depth can actually reach people here, in plain English, made for modern life.</p>
+      <blockquote>"Real Traditional Chinese Medicine isn't mystical. It's a deeply practical way of reading the body, refined over more than two thousand years of written practice. It just never got translated for people like us."</blockquote>
       <h2>What YinYang Well is</h2>
       <p>If you're not happy with how your body's been running, want to feel better in yourself, or are living with pain, YinYang Well puts you in front of people whose reading I trust, in one of two ways.</p>
-      <p>The <strong>TCM Wellness Report</strong> is for the everyday. A senior physician at Baoputang, a licensed clinic in Ningbo, China, reads your intake and photographs and writes back how your body's running now, and the everyday changes to make first.</p>
+      <p>The <strong>TCM Wellness Report</strong> is for the everyday. A senior TCM physician licensed in China, at Baoputang in Ningbo, reads your intake and photographs and writes back how your body's running now, and the everyday changes to make first.</p>
       <p>The <strong>Observation Reading</strong> is with an independent practitioner in China, separate from that clinic. She reads your whole picture in depth, and it is also the way in if you want to be seen in person in China. <a href="practitioners.html" class="link">More about her</a></p>
       <p>Two readers, because they answer two different questions: how you're running now, and how you got here.</p>
     </div>
@@ -65,8 +66,10 @@
   <div class="wrap">
     <div class="cta">
       <h2>Ready to have it read?</h2>
-      <p>See the two readings side by side and choose the one that fits what you want.</p>
-      <a href="services.html" class="btn">See the two readings</a>
+      <div class="cta-actions">
+        <a href="service-constitution-report.html" class="btn">TCM Wellness Report · £79</a>
+        <a href="service-observation-reading.html" class="btn">Observation Reading · £850</a>
+      </div>
     </div>
   </div>
 </section>
@@ -82,10 +85,11 @@
       <div class="ft-col"><h4>About</h4><a href="practitioners.html">Who We Work With</a><a href="about.html">Our Story</a><a href="faq.html">FAQ</a><a href="terms.html">Terms and privacy</a></div>
       <div class="ft-col"><h4>Contact</h4><a href="services.html#enquire">Enquiries</a></div>
     </div>
-    <p class="disclaimer"><strong>Health disclaimer:</strong> YinYang Well arranges two separate services. TCM Wellness Reports are written by physicians at Baoputang Clinic, a licensed Traditional Chinese Medicine clinic in Ningbo, China. Observation Readings and any in-person sessions are arranged separately, with an independent practitioner in China who is not part of that clinic and is not a medical doctor. Neither service is a medical diagnosis or a treatment for any disease, and neither replaces professional medical care. Nothing on this site should be used to decide whether to seek, continue or stop medical treatment. If you have symptoms that concern you, please see a doctor. Travel, accommodation and any services delivered in China are subject to separate terms. © 2026 YinYang Well.</p>
+    <p class="disclaimer"><strong>Health disclaimer:</strong> YinYang Well arranges two separate services. TCM Wellness Reports are written by TCM physicians licensed in China, at Baoputang Clinic, a licensed Traditional Chinese Medicine clinic in Ningbo, China. Observation Readings and any in-person sessions are arranged separately, with an independent practitioner in China who is not part of that clinic and is not a medical doctor. Neither service is a medical diagnosis or a treatment for any disease, and neither replaces professional medical care. Nothing on this site should be used to decide whether to seek, continue or stop medical treatment. If you have symptoms that concern you, please see a doctor. Travel, accommodation and any services delivered in China are subject to separate terms. © 2026 YinYang Well.</p>
   </div>
 </footer>
 
-<script src="fillout-modal.js?v=20260930" defer></script>
+<script src="nav.js?v=20261022" defer></script>
+<script src="fillout-modal.js?v=20261022b" defer></script>
 </body>
 </html>
