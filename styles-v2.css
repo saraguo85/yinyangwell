@@ -836,12 +836,6 @@ section.block.product{background:var(--paper)}
 .faq-split .sec-head{margin-bottom:0;position:sticky;top:120px}
 .faq-split .faq-item:first-child{padding-top:0}
 @media(max-width:860px){.faq-split{grid-template-columns:1fr;gap:24px}.faq-split .sec-head{position:static}}
-.cta.left{text-align:left;padding-left:0;padding-right:0}
-.cta-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(40px,5vw,90px);align-items:start}
-.cta.left h2{margin:0;max-width:none}
-.cta.left p{margin:0 0 30px;max-width:32em}
-.cta.left p.cta-terms{margin:22px 0 0}
-@media(max-width:860px){.cta-grid{grid-template-columns:1fr;gap:24px}}
 /* Service pages run long: tighter section rhythm, and the "leaves out" list runs to the same right edge as everything else. */
 .svc-page section.block{padding:clamp(64px,8vw,112px) 0}
 .svc-page .np-incl-col:last-child{padding-right:0}
