@@ -855,3 +855,7 @@ section.block.product{background:var(--paper)}
 .sym-lead{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0;padding:0 0 14px;border-bottom:1px solid var(--line)}
 .sym.sym-more{color:var(--ink);font-style:italic}
 .sym.sym-more::before{background:transparent;border:1px solid var(--accent);width:4px;height:4px}
+/* Privacy line under the three steps: a quiet full-width footnote, centred on the grid above it. */
+.steps-note{margin:clamp(48px,5vw,72px) 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:13px;line-height:1.6;color:var(--ink-3);text-align:center}
+.steps-note{text-wrap:balance}
+.steps-note .link{font-size:inherit;letter-spacing:0;text-transform:none;color:var(--ink-2);padding:0;border:0;text-decoration:underline;text-underline-offset:3px}
