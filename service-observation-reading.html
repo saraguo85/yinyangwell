@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://server.fillout.com">
 <link rel="preconnect" href="https://embed.fillout.com" crossorigin>
-<link rel="stylesheet" href="styles-v2.css?v=20261022j">
+<link rel="stylesheet" href="styles-v2.css?v=20261023h">
 </head>
-<body>
+<body class="svc-page">
 
 <nav>
   <div class="wrap nav-in">
@@ -31,22 +31,22 @@
 </nav>
 
 <!-- ============ HERO — the product is the reading itself ============ -->
-<header class="np-hero">
+<header class="np-hero stack">
   <div class="wrap">
-    <div class="np-hero-top">
+    <div class="hero-split">
       <div>
         <span class="eyebrow">Observation Reading</span>
-        <h1>You have done the tests. This is one practitioner's account of where it came from.</h1>
+            <h1>You have done the tests. This is one practitioner's account of where it came from.</h1>
       </div>
       <p class="lede">Most people arrive with normal results and a list of things that did not hold. One experienced practitioner reads your case and tells you where she thinks it has come from in the way you live, work and eat.</p>
     </div>
-    <dl class="meta">
+    <dl class="meta even">
       <div><dt>Fee</dt><dd>£850</dd></div>
       <div><dt>Format</dt><dd>A live reading, or a written one</dd></div>
       <div><dt>Read by</dt><dd>One senior practitioner, personally</dd></div>
       <div><dt>Turnaround</dt><dd>Five working days</dd></div>
     </dl>
-    <div class="hero-cta" style="margin-top:40px">
+    <div class="hero-cta" style="margin-top:72px">
       <a href="https://forms.fillout.com/t/94MTXD2bFeus" data-fillout-open data-product="reading" class="btn btn-lg">Start a reading · £850</a>
     </div>
   </div>
@@ -160,7 +160,7 @@
 <!-- ============ WHO READS IT: separation, stated plainly ============ -->
 <section class="block alt">
   <div class="wrap">
-    <div class="prac-grid">
+    <div class="prac-grid top">
       <div class="media prac-photo"><img src="images/practitioner/likeness-drawn.jpg?v=20261019" alt="A drawn likeness of the practitioner" width="1000" height="1250" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       <div class="prac-copy">
         <span class="eyebrow">Who reads it</span>
@@ -181,27 +181,21 @@
 <!-- ============ IF YOU WANT TO GO FURTHER ============ -->
 <section class="block">
   <div class="wrap">
-    <div class="sec-head split">
-      <div>
+    <div class="prac-grid flip top">
+      <div class="prac-copy">
         <span class="eyebrow">Afterwards</span>
         <h2>If you want to be seen in person, that conversation starts after the reading.</h2>
-      </div>
-      <div>
-        <p>The same practitioner also sees clients in person at her own practice in China. Each session is an hour, and for that hour you are the only person she is working with. Whether that is worth your time is yours to decide with the report in front of you: her estimate of days and cost is in writing before you commit, and confirmed once she has seen you.</p>
-      </div>
-    </div>
-    <div class="prac-grid after-grid">
-      <div>
-        <div class="media prac-photo"><img src="images/practitioner/rooms-consulting.jpg" alt="The consulting table at her practice in China" width="1000" height="1250" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <p style="font-size:12px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-top:14px">Her practice · China</p>
-      </div>
-      <div class="prac-copy">
+        <p class="prac-intro">The same practitioner also sees clients in person at her own practice in China. Each session is an hour, and for that hour you are the only person she is working with. Whether that is worth your time is yours to decide with the report in front of you: her estimate of days and cost is in writing before you commit, and confirmed once she has seen you.</p>
         <p class="prac-intro">If you go on to be seen in person, <strong>the £850 is credited in full</strong> against the cost of that work. Once the reading has been delivered, the fee is not refundable, except as set out in our <a href="terms.html" class="link">terms</a>.</p>
         <ul class="np-cost-factors">
-        <li><b>You are under no obligation</b><p>Nothing in the reading commits you to travelling.</p></li>
-        <li><b>Travel is booked by you</b><p>We arrange the practitioner's time and an interpreter. Flights and accommodation are yours to book, in your own name.</p></li>
-      </ul>
+          <li><b>You are under no obligation</b><p>Nothing in the reading commits you to travelling.</p></li>
+          <li><b>Travel is booked by you</b><p>We arrange the practitioner's time and an interpreter. Flights and accommodation are yours to book, in your own name.</p></li>
+        </ul>
         <p style="margin-top:36px"><a href="sessions-in-china.html" class="btn">What being seen in person involves</a></p>
+      </div>
+      <div class="prac-photo">
+        <div class="media"><img src="images/practitioner/rooms-consulting.jpg" alt="The consulting table at her practice in China" width="1000" height="1250" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <p class="photo-cap">Her practice · China</p>
       </div>
     </div>
   </div>
@@ -209,12 +203,18 @@
 
 <!-- ============ ENQUIRY ============ -->
 <section id="enquire">
-  <div class="cta">
-    <span class="eyebrow">Observation Reading · £850</span>
-    <h2>Start a reading.</h2>
-    <p>The intake, the photograph guide and payment are all in one form, and you can take it in your own time.</p>
-    <a href="https://forms.fillout.com/t/94MTXD2bFeus" data-fillout-open data-product="reading" class="btn btn-lg">Start a reading · £850</a>
-    <p class="cta-terms">Paid in full before the reading begins. You can cancel for a full refund within 14 days, up until the reading is delivered. No outcome is promised. <a href="terms.html">Terms and privacy</a> · <a href="faq.html">FAQ</a></p>
+  <div class="cta left">
+    <div class="wrap cta-grid">
+      <div>
+        <span class="eyebrow">Observation Reading · £850</span>
+        <h2>Start a reading.</h2>
+      </div>
+      <div>
+        <p>The intake, the photograph guide and payment are all in one form, and you can take it in your own time.</p>
+        <a href="https://forms.fillout.com/t/94MTXD2bFeus" data-fillout-open data-product="reading" class="btn btn-lg">Start a reading · £850</a>
+        <p class="cta-terms">Paid in full before the reading begins. You can cancel for a full refund within 14 days, up until the reading is delivered. No outcome is promised. <a href="terms.html">Terms and privacy</a> · <a href="faq.html">FAQ</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
