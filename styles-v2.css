@@ -863,3 +863,7 @@ section.block.product{background:var(--paper)}
 .faq-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:clamp(40px,5vw,90px);row-gap:clamp(40px,4.5vw,60px)}
 .faq-grid .faq-item{border-bottom:0;border-top:1px solid var(--ink);padding:22px 0 0}
 @media(max-width:860px){.faq-grid{grid-template-columns:1fr}}
+/* Terms: heading on its own line, text straight underneath, both across the full width (Sara 2026-10-29). */
+.wrap.terms>*{max-width:none}
+.terms .faq-item p{max-width:none}
+.terms .faq-item:first-child{padding-top:0}
