@@ -876,4 +876,4 @@ section.block.product{background:var(--paper)}
 /* Sessions in China hero: heading full width, intro underneath (Sara 2026-11-02, longer heading left the right side empty). */
 .np-intro{grid-template-columns:1fr;gap:clamp(22px,2.6vw,34px);align-items:start}
 .np-intro h1{max-width:none}
-.np-intro .lede{max-width:40em}
+.np-intro .lede{max-width:none}
