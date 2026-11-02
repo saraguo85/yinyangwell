@@ -32,7 +32,7 @@
 
   /* Rhythm */
   --gut:clamp(20px,5vw,40px);
-  --sec:clamp(80px,11vw,150px);   /* section vertical padding */
+  --sec:clamp(52px,6.5vw,92px);   /* section vertical padding (tightened 2026-11-02, was clamp(80px,11vw,150px)) */
   --r:2px;                         /* the only radius on the site */
 }
 
@@ -837,7 +837,7 @@ section.block.product{background:var(--paper)}
 .faq-split .faq-item:first-child{padding-top:0}
 @media(max-width:860px){.faq-split{grid-template-columns:1fr;gap:24px}.faq-split .sec-head{position:static}}
 /* Service pages run long: tighter section rhythm, and the "leaves out" list runs to the same right edge as everything else. */
-.svc-page section.block{padding:clamp(64px,8vw,112px) 0}
+.svc-page section.block{padding:var(--sec) 0}
 .svc-page .np-incl-col:last-child{padding-right:0}
 /* Hero buttons sit centred under the full-width fact row (Sara 2026-10-23). */
 .np-hero.stack .hero-cta{justify-content:center}
