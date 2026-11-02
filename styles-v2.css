@@ -867,3 +867,8 @@ section.block.product{background:var(--paper)}
 .wrap.terms>*{max-width:none}
 .terms .faq-item p{max-width:none}
 .terms .faq-item:first-child{padding-top:0}
+
+/* Home: tighter gap between "Who reads your case" and "Sessions in China" (Sara 2026-11-02). */
+#practitioners.block{padding-bottom:clamp(36px,4vw,56px)}
+#practitioners .docs-grid+p{margin-top:36px !important}
+#programme.block{padding-top:clamp(40px,5vw,64px)}
