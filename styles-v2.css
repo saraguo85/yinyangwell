@@ -303,6 +303,13 @@ nav.open .nav-toggle span:last-child{transform:translateY(-3.75px) rotate(-45deg
 }
 .doc p{font-size:14px;color:var(--ink-2)}
 @media(max-width:860px){.docs-grid{grid-template-columns:1fr;gap:44px}}
+/* Homepage people: clinic physicians on one row, the independent practitioner on her own row (2026-11-06) */
+.ppl-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,44px);border-top:1px solid var(--line);padding-top:clamp(28px,3vw,40px);margin-top:clamp(36px,4vw,56px)}
+.ppl-label h3{margin:12px 0 10px}
+.ppl-label p{font-size:15px;color:var(--ink-2);max-width:22em}
+.ppl-wide{grid-column:span 2}
+.ppl-wide .av{aspect-ratio:16/10}
+@media(max-width:860px){.ppl-row{grid-template-columns:1fr;gap:36px}.ppl-wide{grid-column:auto}}
 
 /* ---------- The programme (flagship, £15k–50k) ---------- */
 .prog{border-top:1px solid var(--ink);padding-top:clamp(40px,5vw,64px)}
