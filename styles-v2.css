@@ -906,8 +906,6 @@ section.block.product{background:var(--paper)}
 @media(prefers-reduced-motion:reduce){.hero-video .hero-bg{display:none}}
 
 /* ---------- 2026-11 refresh: warm ground, brand colour, more imagery ---------- */
-.btn{background:var(--btn,var(--ink));border-color:var(--btn,var(--ink))}
-.btn:hover{background:var(--btn-h,var(--accent));border-color:var(--btn-h,var(--accent))}
 .who-card .tagn,.svc .pill{color:var(--num,var(--ink-3))}
 
 /* Who-it's-for: an image on each column */
