@@ -956,3 +956,11 @@ html[data-theme="pine"]{
 .who-grid .who-card,.who-grid>*:first-child{border-left:0;padding:44px 0 48px}
 @media(max-width:860px){.who-grid .who-card{padding:32px 0 8px;border-top:0}}
 .svc-cards .svc .pill,.svc-cards .svc:first-child .pill{color:var(--num,var(--ink-3));border-bottom:0}
+
+/* Original 简奢 palette kept; optional faint ivory ground for comparison */
+html[data-theme="ivory"]{--paper:#FCFAF6;--paper-2:#F6F3EC;--paper-3:#EFEBE2;--line:#E8E4DA;--line-2:#D6D1C5}
+/* Editorial service cards: no box, image + text, like a magazine spread */
+html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards .svc{background:transparent;border:0;border-radius:0}
+html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards .svc>div:not(.svc-img):not(.price){padding:28px 0 0 0}
+html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards .svc .price{padding:26px 0 0 20px}
+html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards{gap:clamp(28px,4vw,56px)}
