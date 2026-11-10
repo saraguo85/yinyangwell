@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://server.fillout.com">
 <link rel="preconnect" href="https://embed.fillout.com" crossorigin>
-<link rel="stylesheet" href="styles-v2.css?v=20261110c">
+<link rel="stylesheet" href="styles-v2.css?v=20261110d">
 </head>
 <body>
 
@@ -31,13 +31,21 @@
 </nav>
 
 <!-- ============ HERO: the principle behind the method ============ -->
-<header class="np-hero">
-  <div class="wrap">
+<header class="hero hero-video sic-hero">
+  <!-- Background film: muted, looping, decorative. Stock footage (Pixabay licence, AI-generated), not the practitioner. -->
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="images/bands/flute-lake.jpg" aria-hidden="true">
+    <source src="images/bands/flute-lake.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
     <span class="eyebrow">Sessions in China</span>
-    <div class="np-intro">
-      <h1>The Art of the Gentle Shift: Harnessing Nature’s Leverage.</h1>
-      <p class="lede">Our senior practitioner looks for where the flow through your whole body is held up, which is often not just where you feel it, and works there with a light, exact hand: a small force, placed exactly where it matters.</p>
-    </div>
+    <h1>The Art of the Gentle Shift: Harnessing Nature’s Leverage.</h1>
+    <p class="lead">Our senior practitioner looks for where the flow through your whole body is held up, which is often not just where you feel it, and works there with a light, exact hand: a small force, placed exactly where it matters.</p>
+  </div>
+</header>
+
+<section class="np-hero sic-facts">
+  <div class="wrap">
     <ul class="np-points">
         <li><b>One lineage</b><span>A classical hand method that has only ever been passed from teacher to student, one to one. She learned it whole from hers.</span></li>
         <li><b>Her own hands</b><span>The hands-on work in every session is done by her, start to finish.</span></li>
@@ -50,12 +58,7 @@
       <div><dt>Begins with</dt><dd>Observation Reading, £850</dd></div>
     </dl>
   </div>
-</header>
-
-<!-- Background film: muted, looping, decorative. Stock footage (Pixabay licence, AI-generated), not the practitioner. -->
-<div class="img-band vid-band" style="background-image:url('images/bands/flute-lake.jpg');background-position:center 12%" aria-hidden="true">
-  <video autoplay muted loop playsinline preload="metadata" poster="images/bands/flute-lake.jpg"><source src="images/bands/flute-lake.mp4" type="video/mp4"></video>
-</div>
+</section>
 
 <!-- ============ HER APPROACH: how she thinks about the body, and the principles she was taught ============ -->
 <section class="block">
