@@ -910,28 +910,6 @@ section.block.product{background:var(--paper)}
 .btn:hover{background:var(--btn-h,var(--accent));border-color:var(--btn-h,var(--accent))}
 .who-card .tagn,.svc .pill{color:var(--num,var(--ink-3))}
 
-/* Palette A: 青瓷 celadon */
-html[data-theme="celadon"]{
-  --paper:#FBF8F3;--paper-2:#F3EEE6;--paper-3:#ECE5DA;
-  --ink:#1F1C18;--ink-2:#55504A;--ink-3:#6E6860;
-  --line:#E8E1D6;--line-2:#D7CEC0;
-  --accent:#3F6B5C;--accent-2:#2F5246;--btn:#3F6B5C;--btn-h:#2F5246;--num:#3F6B5C;
-}
-/* Palette B: 朱砂 cinnabar */
-html[data-theme="cinnabar"]{
-  --paper:#FBF7F1;--paper-2:#F4ECE2;--paper-3:#EDE2D4;
-  --ink:#211B17;--ink-2:#58504A;--ink-3:#70675F;
-  --line:#EAE0D3;--line-2:#D9CCBB;
-  --accent:#9C3B2B;--accent-2:#7E2E21;--btn:#9C3B2B;--btn-h:#7E2E21;--num:#9C3B2B;
-}
-/* Palette C: 墨绿 + 赭石 pine and ochre */
-html[data-theme="pine"]{
-  --paper:#F8F5EE;--paper-2:#EFEADF;--paper-3:#E7E0D2;
-  --ink:#1E211E;--ink-2:#535750;--ink-3:#6B6E66;
-  --line:#E3DDD0;--line-2:#D1C9B8;
-  --accent:#A8703A;--accent-2:#8A5A2C;--btn:#2E4A40;--btn-h:#A8703A;--num:#A8703A;
-}
-
 /* Who-it's-for: an image on each column */
 .who-img{aspect-ratio:4/3;overflow:hidden;border-radius:var(--r);margin-bottom:26px;background:var(--paper-3)}
 .who-img img{width:100%;height:100%;object-fit:cover}
@@ -957,10 +935,8 @@ html[data-theme="pine"]{
 @media(max-width:860px){.who-grid .who-card{padding:32px 0 8px;border-top:0}}
 .svc-cards .svc .pill,.svc-cards .svc:first-child .pill{color:var(--num,var(--ink-3));border-bottom:0}
 
-/* Original 简奢 palette kept; optional faint ivory ground for comparison */
-html[data-theme="ivory"]{--paper:#FCFAF6;--paper-2:#F6F3EC;--paper-3:#EFEBE2;--line:#E8E4DA;--line-2:#D6D1C5}
 /* Editorial service cards: no box, image + text, like a magazine spread */
-html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards .svc{background:transparent;border:0;border-radius:0}
-html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards .svc>div:not(.svc-img):not(.price){padding:28px 0 0 0}
-html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards .svc .price{padding:26px 0 0 20px}
-html:not([data-theme="celadon"]):not([data-theme="cinnabar"]):not([data-theme="pine"]) .svc-cards{gap:clamp(28px,4vw,56px)}
+.svc-cards .svc{background:transparent;border:0;border-radius:0}
+.svc-cards .svc>div:not(.svc-img):not(.price){padding:28px 0 0 0}
+.svc-cards .svc .price{padding:26px 0 0 20px}
+.svc-cards{gap:clamp(28px,4vw,56px)}
