@@ -940,3 +940,6 @@ section.block.product{background:var(--paper)}
 .svc-cards .svc>div:not(.svc-img):not(.price){padding:28px 0 0 0}
 .svc-cards .svc .price{padding:26px 0 0 20px}
 .svc-cards{gap:clamp(28px,4vw,56px)}
+.vid-band{position:relative;overflow:hidden}
+.vid-band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%}
+@media(prefers-reduced-motion:reduce){.vid-band video{display:none}}
