@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://server.fillout.com">
 <link rel="preconnect" href="https://embed.fillout.com" crossorigin>
-<link rel="stylesheet" href="styles-v2.css?v=20261106a">
+<link rel="stylesheet" href="styles-v2.css?v=20261110a">
 </head>
 <body>
 
@@ -29,21 +29,18 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <h1>In pain, or feeling off when the tests say you're fine? A holistic look at your whole body.</h1>
-      <p class="lead">We arrange two readings from China: one by a senior TCM physician licensed in China, at a licensed clinic, one by an independent practitioner. Both are completed remotely, and each is a separate, independent report.</p>
-      <div class="hero-cta">
-        <a href="#begin" class="btn btn-lg">See the two readings</a>
-        <a href="sessions-in-china.html" class="link" style="margin-left:12px">Sessions in China</a>
-      </div>
-    </div>
-    <div class="hero-art">
-      <!-- An acupuncture point figure. It illustrates the tradition; it is not a
-           photograph of the partner clinic, so it carries no caption claiming to be one.
-           The clinic's own figures sit in the trust strip below. -->
-      <img src="images/hero/acupuncture-figure.jpg" alt="A figure marked with point names" width="1000" height="1250" style="width:100%;height:100%;object-fit:cover;display:block">
+<header class="hero hero-video">
+  <!-- Background film: muted, looping, decorative only. Stock footage (Pixabay licence), not a client or practitioner. -->
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="images/hero/hero-poster.jpg" aria-hidden="true">
+    <source src="images/hero/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <h1>In pain, or feeling off when the tests say you're fine? A holistic look at your whole body.</h1>
+    <p class="lead">We arrange two readings from China: one by a senior TCM physician licensed in China, at a licensed clinic, one by an independent practitioner. Both are completed remotely, and each is a separate, independent report.</p>
+    <div class="hero-cta">
+      <a href="#begin" class="btn btn-lg">See the two readings</a>
+      <a href="sessions-in-china.html" class="link" style="margin-left:12px">Sessions in China</a>
     </div>
   </div>
 </header>

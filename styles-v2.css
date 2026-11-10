@@ -884,3 +884,23 @@ section.block.product{background:var(--paper)}
 .np-intro{grid-template-columns:1fr;gap:clamp(22px,2.6vw,34px);align-items:start}
 .np-intro h1{max-width:none}
 .np-intro .lede{max-width:none}
+
+/* ---------- Video hero (homepage) ---------- */
+.hero-video{position:relative;overflow:hidden;min-height:min(86vh,820px);display:flex;align-items:center;
+  padding:clamp(72px,9vw,120px) 0;background:#3a342c url('images/hero/hero-poster.jpg') 70% 50%/cover}
+.hero-video .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.hero-video .hero-shade{position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(24,19,14,.66) 0%,rgba(24,19,14,.46) 38%,rgba(24,19,14,.12) 62%,rgba(24,19,14,0) 80%)}
+.hero-video .hero-inner{position:relative;z-index:1;width:100%}
+.hero-video h1{color:#fff;max-width:13.5em}
+.hero-video p.lead{color:rgba(255,255,255,.88);max-width:30em}
+.hero-video .btn{background:#fff;color:var(--ink);border-color:#fff}
+.hero-video .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.hero-video .link{color:#fff;border-color:rgba(255,255,255,.55)}
+.hero-video .link:hover{color:#fff;border-color:#fff}
+@media(max-width:860px){
+  .hero-video{min-height:auto;align-items:flex-end;padding-top:46vh;background-position:86% 50%}
+  .hero-video .hero-bg{object-position:86% 50%}
+  .hero-video .hero-shade{background:linear-gradient(180deg,rgba(24,19,14,0) 0%,rgba(24,19,14,.25) 35%,rgba(24,19,14,.78) 70%,rgba(24,19,14,.86) 100%)}
+}
+@media(prefers-reduced-motion:reduce){.hero-video .hero-bg{display:none}}
