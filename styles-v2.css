@@ -776,8 +776,11 @@ footer{padding:clamp(60px,8vw,92px) 0 44px;border-top:1px solid var(--line);back
 /* ---------- Fillout intake modal ----------
    Ported from styles.css (the July intake work) and retuned to the v2 tokens.
    Behaviour lives in fillout-modal.js; these are only its surfaces. */
-.fo-overlay{position:fixed;inset:0;z-index:100;background:rgba(26,26,26,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s;pointer-events:none}
-.fo-overlay.open{opacity:1;pointer-events:auto}
+.fo-overlay{position:fixed;inset:0;z-index:100;background:rgba(26,26,26,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s linear .25s;pointer-events:none}
+.fo-overlay.open{opacity:1;visibility:visible;transition:opacity .25s,visibility 0s;pointer-events:auto}
+/* visibility:hidden, not just opacity:0 + pointer-events:none: iOS Safari still routes touch
+   gestures into the pre-warmed cross-origin Fillout iframe, which froze page scrolling on
+   iPhones (reported 2026-11-11). Hidden elements are skipped entirely; the embed still loads. */
 .fo-modal{position:relative;width:min(720px,100%);height:min(780px,92vh);background:var(--paper);border:1px solid var(--line-2);border-radius:var(--r);box-shadow:0 40px 90px -30px rgba(26,26,26,.45);overflow:hidden;transform:translateY(14px);transition:transform .25s}
 .fo-overlay.open .fo-modal{transform:none}
 .fo-modal iframe{width:100%;height:100%;border:0;display:block}
