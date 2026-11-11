@@ -949,3 +949,21 @@ section.block.product{background:var(--paper)}
 .sic-facts{padding-top:clamp(44px,5vw,72px)}
 @media(max-width:860px){.sic-hero,.sic-hero .hero-bg{background-position:72% 20%;object-position:72% 20%}}
 .sic-facts .np-points{margin-top:0}
+
+/* ---------- Mobile-only fixes (2026-11-11). Desktop untouched. ---------- */
+@media(max-width:860px){
+  /* Home hero: keep the meditating figure in frame, shorter so the buttons reach the first screen */
+  .hero-video:not(.sic-hero){padding-top:24vh;padding-bottom:36px;background-position:100% 30%}
+  .hero-video:not(.sic-hero) .hero-bg{object-position:100% 30%}
+  .hero-video:not(.sic-hero) h1{font-size:32px}
+  .hero-video:not(.sic-hero) p.lead{font-size:15px;line-height:1.6}
+  /* Home service cards: price is already on the button, so drop the side price and let the text use full width */
+  .svc-cards .svc{grid-template-columns:1fr}
+  .svc-cards .svc .price{display:none}
+  .svc-cards .btn{width:100%;justify-content:center;text-align:center}
+  /* Home "who reads your case": physicians side by side instead of two full-screen portraits */
+  .ppl-row{grid-template-columns:1fr 1fr;gap:28px 16px}
+  .ppl-row .ppl-label,.ppl-row .ppl-wide{grid-column:1/-1}
+  .ppl-row .doc .av{margin-bottom:14px}
+  .ppl-row .doc .role{font-size:9.5px;letter-spacing:.12em}
+}
