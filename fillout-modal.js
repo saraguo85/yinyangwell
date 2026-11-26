@@ -83,8 +83,10 @@
     overlay.setAttribute('aria-hidden', 'true');
     overlay.innerHTML =
       '<div class="fo-modal" role="dialog" aria-modal="true" aria-label="TCM Wellness Report intake">' +
-      '<button class="fo-close" aria-label="Close">×</button>' +
-      '<button class="fo-fresh" type="button">Start fresh</button>' +
+      // Our own controls sit in a bar above the form, not floating over it: floating
+      // over the iframe they covered Fillout's own back arrow (Sara, 2026-11-26).
+      '<div class="fo-bar"><button class="fo-fresh" type="button">Start fresh</button>' +
+      '<button class="fo-close" aria-label="Close">×</button></div>' +
       '<div class="fo-loading" aria-live="polite"><span class="fo-spin"></span>Loading your assessment…</div>' +
       '<div class="fo-choose"><div class="fo-choose-in">' +
         '<h3>Which would you like to start?</h3>' +
@@ -95,7 +97,11 @@
             '</span><span class="fo-opt-price">' + p.price + '</span><span class="fo-opt-note">' + p.note + '</span></button>';
         }).join('') +
       '</div></div>' +
-      '<div class="fo-frame" data-fillout-id="' + FORM_ID + '" data-fillout-embed-type="standard" data-fillout-inherit-parameters></div>' +
+      // Dynamic resize: the iframe grows to the form's full height and .fo-body does the
+      // scrolling, so we can put each new page back at the top (see onFormMessage). With a
+      // fixed-height iframe the form scrolled inside itself and a new page could open
+      // half-way down, hiding required questions above (Sara, 2026-11-26, iPhone).
+      '<div class="fo-body"><div class="fo-frame" data-fillout-id="' + FORM_ID + '" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div></div>' +
       '</div>';
     document.body.appendChild(overlay);
 
@@ -161,8 +167,25 @@
     overlay.setAttribute('aria-hidden', 'false');
     if ('inert' in HTMLElement.prototype) overlay.inert = false;
     document.body.classList.add('fo-lock');
+    toTop();
     requestAnimationFrame(function () { overlay.classList.add('open'); });
   }
+
+  function toTop() {
+    var b = overlay && overlay.querySelector('.fo-body');
+    if (b) b.scrollTop = 0;
+  }
+
+  // Fillout posts 'check_scroll_up' when it moves to another page. Its own handler only
+  // scrolls when the iframe is above the browser window, which never happens inside our
+  // dialog, so do it ourselves.
+  window.addEventListener('message', function (e) {
+    if (!overlay || !e.data || e.data.type !== 'check_scroll_up') return;
+    var host = '';
+    try { host = new URL(e.origin).hostname; } catch (err) { return; }
+    if (!/(^|\.)fillout\.com$/.test(host)) return;
+    toTop();
+  });
 
   function close() {
     if (!overlay) return;
